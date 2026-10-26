@@ -1,27 +1,6 @@
 'use strict';
 
-// fetching jacket details from API
-async function fetchJacketDetails() {
-    const url = 'https://v2.api.noroff.dev/rainy-days';
-
-  try {
-    const response = await fetch(url);
-
-    if (!response.ok) {
-      throw new Error('Failed to fetch jackets details');
-    }
-
-    const json = await response.json();
-    const jackets = json.data;
-
-    return jackets;
-
-  } catch (error) {
-    console.log(error);
-  };
-};
-
-const jackets = await fetchJacketDetails();
+import {jackets } from "./api.js";
 
 
 const mensJackets = jackets.filter((jacket) => {
@@ -38,6 +17,9 @@ mensJackets.forEach((jacket)=> {
     productGrid.appendChild(productGridContainer);
     productGridContainer.setAttribute('id', jacket.id);
 
+    const productLink = document.createElement('a');
+    productLink.href = `product.html?id=${jacket.id}`;
+
     const productImage = document.createElement('img');
     productImage.setAttribute('src', jacket.image.url);
     productImage.setAttribute('alt', jacket.image.alt);
@@ -50,8 +32,14 @@ mensJackets.forEach((jacket)=> {
     productPrice.classList.add('product-price');
     productPrice.textContent = '$' + jacket.price.toFixed(2);
 
-    productGridContainer.appendChild(productImage);
+    productGridContainer.appendChild(productLink);
+    productLink.appendChild(productImage);
     productGridContainer.appendChild(productTitle);
     productGridContainer.appendChild(productPrice);
 });
 
+const selectedJacket = jackets.find((jacket) => {
+  return String(jacket.id) === productId;
+});
+
+console.log(jackets);
