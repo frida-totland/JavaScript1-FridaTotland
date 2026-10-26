@@ -78,6 +78,8 @@
     object-fit: cover;
     display: block;
     border-radius: 5px;
+    aspect-ratio: 3/4;
+    max-width: 250px;
 }
 
 .product-page__products h3 {

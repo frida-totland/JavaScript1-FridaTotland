@@ -1,2 +1,3 @@
-# html-css-frida-totland
-My HTML and CSS Course Assignment
+# JavaScript assignment - Frida Totland
+
+This is my JavaScript assignment
