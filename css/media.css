@@ -1,0 +1,173 @@
+@media(min-width: 600px) {
+    .carousel__images {
+        width: calc((100% - 60px) / 4);
+    }
+
+    .inspiration-grid {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+
+    .inspiration-grid img {
+        height: 420px;
+        object-fit: cover;
+    }
+
+    .inspiration-grid h2,
+    .inspiration-grid p {
+        text-align: left;
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+
+    .inspiration-grid h2 {
+        align-self: end;
+        padding-bottom: 15px;
+    }
+
+    .inspiration-grid p {
+        align-self: start;
+        padding-top: 0;
+    }
+
+    /*Footer*/
+        footer {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+        padding: 70px 50px;
+    }
+
+    .footer-hidden {
+        display: block;
+    }
+}
+
+@media(min-width: 950px){
+    
+    .searchbar{
+        pointer-events: none;
+    }
+    .search-input{
+        display: block;
+    }
+    
+    .top-item {
+        font-size: 1.2em;
+    }
+
+    .navbar-home {
+        height: 120px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navbar-home-left {
+        width: auto;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        gap: 70px;
+        width: auto;
+        padding: 0;
+        background: none;
+    }
+
+    .navbar-home-right {
+        width: auto;
+    }
+
+    .navbar-home-right-icons {
+        display: flex;
+        gap: 10px;
+    }
+
+    .header-page {
+        box-shadow: 0 2px 4px rgba(0,0,0,0.3)
+    }
+
+    .navbar-links {
+        height: 60px;
+        background-color: transparent;
+    }
+
+    .navbar div {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .search-box-hidden {
+        display: none;
+    }
+
+    .logo-section {
+        background-color: transparent;
+        padding: 0;
+    }
+
+    /* Jackets Page */
+    .product-page__products {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px 15px;
+    }
+
+    .product-page__filter {
+        display: block;
+    }
+
+    /* Product specific page */
+    .product-specific-page__content {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .product-overview {
+        margin-left: 20px;
+    }
+
+    .product-overview__icons {
+        flex-direction: column;
+    }
+
+    .product-overview__icons p {
+    font-size: 1em;
+    }
+
+    .product-overview__icons i {
+        font-size: 28px;
+    }
+
+    /*Cart Page*/
+    .cart-page {
+        flex-direction: row;
+        gap: 60px;
+    }
+
+    .quantity p,
+    .cart-price {
+        font-size: 1.5em;
+    }
+
+    .checkout {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 70px 90px;
+    }
+
+    .cart-price-total {
+        display: flex;
+    }
+
+    .summary {
+        width: 420px;
+    }
+
+}

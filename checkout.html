@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete your RainyDays order securely by entering your shipping and payment details at checkout.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>RainyDays | Checkout</title>
+    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/checkout.css">
+    <link rel="stylesheet" href="css/media.css" />
+  </head>
+  <body>
+    <header class="header-page">
+      <section class="top-bar">
+        <div class="top-item">
+          <i class="fa-solid fa-check"></i>
+          <p>QUALITY</p>
+        </div>
+        <div class="top-item">
+          <i class="fa-solid fa-check"></i>
+          <p>COMFORT</p>
+        </div>
+        <div class="top-item">
+          <i class="fa-solid fa-check"></i>
+          <p>PROTECTION</p>
+        </div>
+      </section>
+      <section class="navbar navbar-home-right">
+        <div>
+          <a href="index.html"><img src="images/RainyDays_Logo.png" alt="RainyDays Logo" class="logo"/></a>
+        </div>
+        <div class="search-box">
+          <input type="search" placeholder="Search..." />
+          <i class="fa-solid fa-magnifying-glass" style="color: #0a3641"></i>
+        </div>
+        <div class="navbar-home-right-icons">
+          <a href="tbc.html"><i class="fa-solid fa-user" style="color: #0a3641;"></i></a>
+          <a href="cart.html"><i class="fa-solid fa-cart-shopping" style="color: #0a3641"></i></a>
+        </div>
+      </section>
+      <section class="navbar-links navbar-home">
+        <div class="navbar-page-mobile navbar-home-left">
+          <input type="checkbox" id="menu-toggle" />
+          <label for="menu-toggle" class="hamburger">
+            <i class="fa-solid fa-bars"></i>
+          </label>
+          <nav class="nav-links">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="jackets.html">JACKETS</a></li>
+            <li><a href="tbc.html">ABOUT US</a></li>
+            <li><a href="tbc.html">CONTACT</a></li>
+          </nav>
+          <div class="search-box-hidden">
+            <div class="search-box">
+              <input type="search" placeholder="Search..." />
+              <i class="fa-solid fa-magnifying-glass" style="color: #0a3641"></i>
+            </div>
+            <div>
+              <a href="tbc.html"><i class="fa-solid fa-user" style="color: #0a3641;"></i></a>
+              <a href="cart.html"><i class="fa-solid fa-cart-shopping" style="color: #0a3641"></i></a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+    <main class="checkout">
+      <section class="form-section">
+        <h1>SHIPPING AND PAYMENT</h1>
+        <form>
+          <label>Name</label>
+          <input type="text" placeholder="-" />
+          <label>Surname</label>
+          <input type="text" placeholder="-" />
+          <label>Email</label>
+          <input type="email" placeholder="-" />
+          <label>Phone number</label>
+          <input type="text" placeholder="-" />
+          <label>Address</label>
+          <input type="text" />
+          <div class="row">
+            <div>
+              <label>Postcode</label>
+              <input type="text" placeholder="-" />
+            </div>
+            <div>
+              <label>City</label>
+              <input type="text" placeholder="-" />
+            </div>
+          </div>
+          <h2>Choose Delivery</h2>
+          <label class="option">
+            <input type="checkbox" />
+            <span>PostNord Home Delivery</span>
+            <small>3–6 days</small>
+            <p>49,-</p>
+          </label>
+          <label class="option">
+            <input type="checkbox" />
+            <span>Bring Express</span>
+            <small>1–2 days</small>
+            <p>99,-</p>
+          </label>
+          <label class="option">
+            <input type="checkbox" />
+            <span>Pick up in store</span>
+            <small>1–4 days</small>
+            <p>0,-</p>
+          </label>
+          <h2>Choose Payment</h2>
+          <label class="payment">
+            <input type="checkbox" />
+            <span>Vipps</span>
+          </label>
+          <label class="payment">
+            <input type="checkbox" />
+            <span>Klarna</span>
+          </label>
+          <label class="payment">
+            <input type="checkbox" />
+            <span>Visa</span>
+          </label>
+          <a href="confirmation.html" type="submit" class="cta cta-wide">PLACE ORDER</a>
+        </form>
+      </section>
+      <aside class="summary">
+        <h3>ORDER SUMMARY</h3>
+        <div class="product">
+          <div>
+            <p>Virex Outdoor</p>
+            <p>Stormveil Pro</p>
+            <p>Size: L</p>
+          </div>
+          <span>2 999,-</span>
+        </div>
+        <div class="line">
+          <span>Subtotal</span>
+          <p>2 999,-</p>
+        </div>
+        <div class="line">
+          <span>Shipping</span>
+          <p>49,-</p>
+        </div>
+        <div class="line total">
+          <span>Total</span>
+          <p>3 048,-</p>
+        </div>
+      </aside>
+    </main>
+    <footer>
+      <section>
+        <h3>LOCATIONS</h3>
+        <ul class="footer-hidden">
+          <li>Norway</li>
+          <li>Sweden</li>
+          <li>Denmark</li>
+        </ul>
+      </section>
+      <section>
+        <h3>HELP</h3>
+        <ul class="footer-hidden">
+          <li>FAQ</li>
+          <li>Returns</li>
+          <li>Shipping</li>
+        </ul>
+      </section>
+      <section>
+        <h3>ABOUT US</h3>
+        <ul class="footer-hidden">
+          <li>Our history</li>
+          <li>Production</li>
+          <li>Materials</li>
+        </ul>
+      </section>
+      <section>
+        <h3>CONTACT</h3>
+        <ul class="footer-contact">
+          <li>
+            <i class="fa-regular fa-envelope" style="color: #ffffff;"></i>
+            <a href="mailto:help@rainydays.com">help@rainydays.com</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-phone" style="color: #ffffff;"></i>
+            +00 00 00 00
+          </li>
+          <li>
+            <a href="https://www.instagram.com/rainydays/" target="_blank">
+            <i class="fa-brands fa-instagram" style="color: #ffffff;"></i>
+            </a>
+            <a href="https://www.facebook.com/rainydays" target="_blank">
+            <i class="fa-brands fa-facebook" style="color: #ffffff;"></i>
+            </a>
+            <a href="https://twitter.com/rainydays" target="_blank">
+            <i class="fa-brands fa-twitter" style="color: #ffffff;"></i>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </footer>
+  </body>
+</html>

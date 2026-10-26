@@ -1,0 +1,122 @@
+.product-page {
+    display: flex;
+    max-width: 1300px;
+    margin: 50px auto;
+}
+
+.product-page__filter {
+    flex: 1;
+    border-right: #0a3641 solid 1px;
+    display: none;
+    flex-direction: column;
+}
+
+.product-page__filter-categories {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.product-page__filter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.product-page__filter-header i {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.product-page__filter h2 {
+    font-family: "poppins", Arial, sans-serif;
+    text-transform: none;
+    font-size: 1.1em;
+}
+
+.product-page__filter ul {
+    margin-left: 30px;
+}
+
+.product-page__products {
+    flex: 3;
+    padding: 0 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px 20px;
+    padding: 20px;
+}
+
+.product-page__products h1,
+.product-page__products-header {
+    grid-column: 1 / -1;
+    margin-top: 0;
+}
+
+.product-page__products-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-page__products > div:not(.product-page__products-header) {
+    display: flex;
+    flex-direction: column;
+}
+
+.sort-by {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.product-image {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 5px;
+}
+
+.product-page__products h3 {
+    margin: 10px 0 3px;
+    font-size: 1.2em;
+}
+
+.product-page__products p {
+    margin: 0;
+}
+
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 10px;
+  border-radius: 10px;
+  background: #ffaf4e;
+  outline: none;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  background: #0a3641;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #0a3641;
+  cursor: pointer;
+}
