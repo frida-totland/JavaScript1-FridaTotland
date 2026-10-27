@@ -9,11 +9,19 @@ const selectedJacket = jackets.find((jacket) => {
   return String(jacket.id) === productId;
 });
 
-const productOverview = document.querySelector('.product-overview');
+const productImageContainer = document.querySelector('.product-specific-page__images-big');
+const productImage = document.createElement('img');
+productImage.setAttribute('src', selectedJacket.image.url);
+productImage.setAttribute('alt', selectedJacket.image.alt);
+productImage.classList.add('product-specific-image-big');
+productImageContainer.appendChild(productImage);
+
+
+const productOverviewHeader = document.getElementById('product-overview-header');
 
 const productTitle = document.createElement('h1');
 productTitle.textContent = selectedJacket.title;
-productOverview.appendChild(productTitle);
+productOverviewHeader.appendChild(productTitle);
 
 const productPrice = document.createElement('p');
 if (selectedJacket.onSale === true){
@@ -22,7 +30,7 @@ if (selectedJacket.onSale === true){
     productPrice.classList.add('product-price');
     productPrice.textContent = '$' + selectedJacket.price.toFixed(2);
 };
-productOverview.appendChild(productPrice);
+productOverviewHeader.appendChild(productPrice);
 
 const sizes = selectedJacket.sizes;
 sizes.forEach((size) => {

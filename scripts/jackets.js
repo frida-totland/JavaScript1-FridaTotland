@@ -38,8 +38,5 @@ mensJackets.forEach((jacket)=> {
     productGridContainer.appendChild(productPrice);
 });
 
-const selectedJacket = jackets.find((jacket) => {
-  return String(jacket.id) === productId;
-});
 
 console.log(jackets);
