@@ -132,18 +132,6 @@
         margin-left: 20px;
     }
 
-    .product-overview__icons {
-        flex-direction: column;
-    }
-
-    .product-overview__icons p {
-    font-size: 1em;
-    }
-
-    .product-overview__icons i {
-        font-size: 28px;
-    }
-
     /*Cart Page*/
     .cart-page {
         flex-direction: row;
