@@ -2,6 +2,8 @@
 
 import {jackets } from "./api.js";
 
+console.log(localStorage.getItem('storedInCart')); // Expected output: null
+
 
 const mensJackets = jackets.filter((jacket) => {
     return jacket.tags.includes('mens');

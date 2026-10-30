@@ -3,7 +3,7 @@
 import { jackets } from "./api.js";
 
 const params = new URLSearchParams(window.location.search);
-const productId = params.get('id');
+export const productId = params.get('id');
 
 const selectedJacket = jackets.find((jacket) => {
   return String(jacket.id) === productId;
@@ -35,7 +35,7 @@ if (selectedJacket.onSale === true){
     salePrice.textContent = '$' + selectedJacket.discountedPrice.toFixed(2);
     productOverviewHeader.appendChild(salePrice);
 } else {
-    productPrice
+    productPrice;
 };
 
 // Getting product sizes from API and displaying correct sizes on page
