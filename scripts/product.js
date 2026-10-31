@@ -1,9 +1,10 @@
 'use strict';
 
 import { jackets } from "./api.js";
+import { addToCart } from "./cart.js";
 
 const params = new URLSearchParams(window.location.search);
-export const productId = params.get('id');
+const productId = params.get('id');
 
 const selectedJacket = jackets.find((jacket) => {
   return String(jacket.id) === productId;
@@ -40,13 +41,33 @@ if (selectedJacket.onSale === true){
 
 // Getting product sizes from API and displaying correct sizes on page
 const sizes = selectedJacket.sizes;
+
+let selectedSize = null;
+
 sizes.forEach((size) => {
     const productSize = document.querySelector('.product-size');
-    const sizeButton = document.createElement('p');
+    const sizeButton = document.createElement('button');
     sizeButton.classList.add('product-size__cta');
+    sizeButton.setAttribute('type', 'button');
     sizeButton.textContent = size;
 
     productSize.appendChild(sizeButton);
+
+    sizeButton.addEventListener('click', ()=>{
+        selectedSize = size;
+    });
+});
+
+// Adding products to the cart
+const cartButton = document.getElementById('cart-cta');
+
+
+cartButton.addEventListener('click', () => {
+    if (!selectedSize) {
+        alert('Choose a size first');
+        return;
+    }
+    addToCart(productId, selectedSize);
 });
 
 // Getting product information and displaying it on page

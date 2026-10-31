@@ -1,20 +1,43 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Review your RainyDays shopping cart before continuing to checkout and completing your outdoor jacket purchase.">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Review your RainyDays shopping cart before continuing to checkout and completing your outdoor jacket purchase."
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>RainyDays | Cart</title>
-    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
-    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../assets/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../assets/favicon-16x16.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/cart.css" />
     <link rel="stylesheet" href="css/media.css" />
+    <script type="module" src="scripts/cart.js"></script>
   </head>
   <body>
     <header class="header-page">
@@ -34,15 +57,26 @@
       </section>
       <section class="navbar navbar-home-right">
         <div>
-          <a href="index.html"><img src="images/RainyDays_Logo.png" alt="RainyDays Logo" class="logo"/></a>
+          <a href="index.html"
+            ><img
+              src="images/RainyDays_Logo.png"
+              alt="RainyDays Logo"
+              class="logo"
+          /></a>
         </div>
         <div class="search-box">
           <input type="search" placeholder="Search..." />
           <i class="fa-solid fa-magnifying-glass" style="color: #0a3641"></i>
         </div>
         <div class="navbar-home-right-icons">
-          <a href="tbc.html"><i class="fa-solid fa-user" style="color: #0a3641;"></i></a>
-          <a href="cart.html"><i class="fa-solid fa-cart-shopping" style="color: #0a3641"></i></a>
+          <a href="tbc.html"
+            ><i class="fa-solid fa-user" style="color: #0a3641"></i
+          ></a>
+          <div class="cart-icon">
+            <a href="cart.html"
+              ><i class="fa-solid fa-cart-shopping" style="color: #0a3641"></i
+            ></a>
+          </div>
         </div>
       </section>
       <section class="navbar-links navbar-home">
@@ -60,11 +94,23 @@
           <div class="search-box-hidden">
             <div class="search-box">
               <input type="search" placeholder="Search..." />
-              <i class="fa-solid fa-magnifying-glass" style="color: #0a3641"></i>
+              <i
+                class="fa-solid fa-magnifying-glass"
+                style="color: #0a3641"
+              ></i>
             </div>
             <div>
-              <a href="tbc.html"><i class="fa-solid fa-user" style="color: #0a3641;"></i></a>
-              <a href="cart.html"><i class="fa-solid fa-cart-shopping" style="color: #0a3641"></i></a>
+              <a href="tbc.html"
+                ><i class="fa-solid fa-user" style="color: #0a3641"></i
+              ></a>
+              <div class="cart-icon">
+                <a href="cart.html"
+                  ><i
+                    class="fa-solid fa-cart-shopping"
+                    style="color: #0a3641"
+                  ></i
+                ></a>
+              </div>
             </div>
           </div>
         </div>
@@ -81,7 +127,10 @@
             <p>Total Price</p>
           </div>
           <div class="cart-item">
-            <img src="images/product-image1.jpg" alt="woman wearing a blue winter jacket"/>
+            <img
+              src="images/product-image1.jpg"
+              alt="woman wearing a blue winter jacket"
+            />
             <div class="item-info">
               <h3>Virex Outdoor</h3>
               <h2>Stormveil Pro</h2>
@@ -103,7 +152,7 @@
         <aside class="summary">
           <h2>Order Summary</h2>
           <div class="summary-product">
-            <p>Virex Outdoor<br>Stormveil Pro<br>Size: L</p>
+            <p>Virex Outdoor<br />Stormveil Pro<br />Size: L</p>
             <p>2 999,-</p>
           </div>
           <div class="summary-line">
@@ -128,10 +177,26 @@
             <i class="fa-solid fa-angle-left"></i>
           </div>
           <div class="carousel-content">
-            <img src="images/RainyDays_Jacket1.png" alt="Red and grey jacket" class="carousel__images">
-            <img src="images/RainyDays_Jacket2.png" alt="Black jacket" class="carousel__images">
-            <img src="images/RainyDays_Jacket3.png" alt="Red and black jacket" class="carousel__images">
-            <img src="images/RainyDays_Jacket4.png" alt="Black and white jacket" class="carousel__images">
+            <img
+              src="images/RainyDays_Jacket1.png"
+              alt="Red and grey jacket"
+              class="carousel__images"
+            />
+            <img
+              src="images/RainyDays_Jacket2.png"
+              alt="Black jacket"
+              class="carousel__images"
+            />
+            <img
+              src="images/RainyDays_Jacket3.png"
+              alt="Red and black jacket"
+              class="carousel__images"
+            />
+            <img
+              src="images/RainyDays_Jacket4.png"
+              alt="Black and white jacket"
+              class="carousel__images"
+            />
           </div>
           <div class="carousel-arrow right">
             <i class="fa-solid fa-angle-right"></i>
@@ -168,22 +233,22 @@
         <h3>CONTACT</h3>
         <ul class="footer-contact">
           <li>
-            <i class="fa-regular fa-envelope" style="color: #ffffff;"></i>
+            <i class="fa-regular fa-envelope" style="color: #ffffff"></i>
             <a href="mailto:help@rainydays.com">help@rainydays.com</a>
           </li>
           <li>
-            <i class="fa-solid fa-phone" style="color: #ffffff;"></i>
+            <i class="fa-solid fa-phone" style="color: #ffffff"></i>
             +00 00 00 00
           </li>
           <li>
             <a href="https://www.instagram.com/rainydays/" target="_blank">
-            <i class="fa-brands fa-instagram" style="color: #ffffff;"></i>
+              <i class="fa-brands fa-instagram" style="color: #ffffff"></i>
             </a>
             <a href="https://www.facebook.com/rainydays" target="_blank">
-            <i class="fa-brands fa-facebook" style="color: #ffffff;"></i>
+              <i class="fa-brands fa-facebook" style="color: #ffffff"></i>
             </a>
             <a href="https://twitter.com/rainydays" target="_blank">
-            <i class="fa-brands fa-twitter" style="color: #ffffff;"></i>
+              <i class="fa-brands fa-twitter" style="color: #ffffff"></i>
             </a>
           </li>
         </ul>

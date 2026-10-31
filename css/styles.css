@@ -205,6 +205,12 @@ header ul {
     display: flex;
 }
 
+.cart-item-count {
+    background-color: #ffaf4e;
+    border-radius: 50px;
+    padding: 5px 10px;
+}
+
 /* Header and Navigation on Home Page */
 .header-home {
     background-image: url(../images/RainyDays_Home1.jpg);
