@@ -5,14 +5,14 @@
 
 const STORAGE_KEY = 'storedInCart';
 
-function getCart() {
+export function getCart() {
     const storedCart = localStorage.getItem(STORAGE_KEY);
     const cart = JSON.parse(storedCart) || [];
 
     return cart;
 };
 
-function saveCart(cart) {
+export function saveCart(cart) {
     const cartText = JSON.stringify(cart);
     localStorage.setItem(STORAGE_KEY, cartText);
 
