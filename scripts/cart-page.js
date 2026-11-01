@@ -1,7 +1,7 @@
 'use strict';
 
 import { jackets } from "./api.js";
-import { getCart, removeFromCart } from "./cart.js";
+import { getCart, removeFromCart, addToCart, decreaseQuantity } from "./cart.js";
 
 const cartItemsContainer = document.getElementById('cart-items');
 const cartTotal = document.getElementById('cart-total');
@@ -47,7 +47,32 @@ function renderCart(){
 
         const quantity = document.createElement('div');
         quantity.classList.add('quantity');
-        quantity.textContent = line.quantity;
+
+        const decreaseButton = document.createElement('button');
+        decreaseButton.setAttribute('type', 'button');
+        decreaseButton.setAttribute('aria-label', 'Decrease quantity');
+        decreaseButton.addEventListener('click', () => {
+            decreaseQuantity(line.id, line.size);
+            renderCart();
+        });
+
+        const decreaseIcon = document.createElement('i');
+        decreaseIcon.classList.add('fa-solid', 'fa-circle-minus');
+
+        const quantityNumber = document.createElement('p');
+        quantityNumber.textContent = line.quantity;
+
+        const addButton = document.createElement('button');
+        addButton.setAttribute('type', 'button');
+        addButton.setAttribute('aria-label', 'Increase quantity');
+        addButton.addEventListener('click', () => {
+            addToCart(line.id, line.size);
+            renderCart();
+        });
+
+        const addIcon = document.createElement('i');
+        addIcon.classList.add('fa-solid', 'fa-circle-plus');
+
 
         const jacketPrice = document.createElement('p');
         jacketPrice.classList.add('cart-price');
@@ -66,9 +91,13 @@ function renderCart(){
             renderCart();
         });
 
+        // Appending elements to the page
         cartItemsContainer.appendChild(cartItem);
         cartItem.append(jacketImage, jacketInfo, quantity, jacketPrice, jacketPriceTotal);
         jacketInfo.append(jacketTitle, jacketSize, removeButton);
+        quantity.append(decreaseButton, quantityNumber, addButton);
+        decreaseButton.appendChild(decreaseIcon);
+        addButton.appendChild(addIcon);
     });
 
     cartTotal.textContent = '$' + total.toFixed(2);
