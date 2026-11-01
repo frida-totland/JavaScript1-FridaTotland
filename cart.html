@@ -155,23 +155,26 @@
         </div>
         <aside class="summary">
           <h2>Order Summary</h2>
-          <div class="summary-product">
+          <div id="summary-items"></div>
+          <!-- <div class="summary-product">
             <p>Virex Outdoor<br />Stormveil Pro<br />Size: L</p>
             <p>2 999,-</p>
-          </div>
+          </div> -->
           <div class="summary-line">
             <p>Subtotal</p>
-            <p>2 999,-</p>
+            <p id="summary-subtotal"></p>
           </div>
           <div class="summary-line">
             <p>Shipping</p>
-            <p>49,-</p>
+            <p>Calculated at checkout</p>
           </div>
           <div class="summary-line total-line">
             <p>Total</p>
-            <p>3 048,-</p>
+            <p id="summary-total"></p>
           </div>
-          <a href="checkout.html" class="cta cta-wide">Proceed to Checkout</a>
+          <a href="checkout.html" id="checkout-button" class="cta cta-wide"
+            >Proceed to Checkout</a
+          >
         </aside>
       </section>
       <section class="carousel">

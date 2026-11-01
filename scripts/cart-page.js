@@ -5,9 +5,14 @@ import { getCart, removeFromCart, addToCart, decreaseQuantity } from "./cart.js"
 
 const cartItemsContainer = document.getElementById('cart-items');
 const cartTotal = document.getElementById('cart-total');
+const summaryItems = document.getElementById('summary-items');
+const summarySubtotal = document.getElementById('summary-subtotal');
+const summaryTotal = document.getElementById('summary-total');
+const checkoutButton = document.getElementById('checkout-button');
 
 function renderCart(){
     cartItemsContainer.innerHTML = '';
+    summaryItems.innerHTML = '';
 
     const cart = getCart();
     if (cart.length === 0) {
@@ -16,8 +21,15 @@ function renderCart(){
         cartItemsContainer.appendChild(emptyCartMessage);
 
         cartTotal.textContent = '$0.00';
+        summarySubtotal.textContent = '$0.00';
+        summaryTotal.textContent = '$0.00';
+
+        checkoutButton.hidden = true;
+
         return;
     }
+
+    checkoutButton.hidden = false;
 
     let total = 0;
 
@@ -27,7 +39,24 @@ function renderCart(){
             return;
         }
 
-        total += jacket.discountedPrice * line.quantity;
+        const linePrice = jacket.discountedPrice * line.quantity;
+
+        // Cart summary
+        const summaryProduct = document.createElement('div');
+        summaryProduct.classList.add('summary-product');
+
+        const summaryInfo = document.createElement('p');
+        summaryInfo.textContent = jacket.title + ' x ' + line.quantity + ', Size: ' + line.size;
+
+        const summaryPrice = document.createElement('p');
+        summaryPrice.classList.add('cart-price');
+        summaryPrice.textContent = '$'+ linePrice.toFixed(2);
+
+        summaryItems.appendChild(summaryProduct);
+        summaryProduct.append(summaryInfo, summaryPrice);
+
+        // Main cart display
+        total += linePrice;
 
         const cartItem = document.createElement('div');
         cartItem.classList.add('cart-item');
@@ -73,14 +102,13 @@ function renderCart(){
         const addIcon = document.createElement('i');
         addIcon.classList.add('fa-solid', 'fa-circle-plus');
 
-
         const jacketPrice = document.createElement('p');
         jacketPrice.classList.add('cart-price');
         jacketPrice.textContent = '$'+ jacket.discountedPrice.toFixed(2);
 
         const jacketPriceTotal = document.createElement('p');
         jacketPriceTotal.classList.add('cart-price');
-        jacketPriceTotal.textContent = '$' + (jacket.discountedPrice * line.quantity).toFixed(2);
+        jacketPriceTotal.textContent = '$' + linePrice.toFixed(2);
 
         const removeButton = document.createElement('button');
         removeButton.setAttribute('type', 'button');
@@ -100,6 +128,8 @@ function renderCart(){
         addButton.appendChild(addIcon);
     });
 
+    summaryTotal.textContent = '$' + total.toFixed(2);
+    summarySubtotal.textContent = '$' + total.toFixed(2);
     cartTotal.textContent = '$' + total.toFixed(2);
 };
 
