@@ -38,6 +38,7 @@
     <link rel="stylesheet" href="css/checkout.css" />
     <link rel="stylesheet" href="css/media.css" />
     <script type="module" src="scripts/cart.js"></script>
+    <script type="module" src="scripts/checkout-page.js"></script>
   </head>
   <body>
     <header class="header-page">
@@ -142,34 +143,34 @@
           </div>
           <h2>Choose Delivery</h2>
           <label class="option">
-            <input type="checkbox" />
+            <input type="radio" name="delivery" value="4.99" checked />
             <span>PostNord Home Delivery</span>
             <small>3–6 days</small>
-            <p>49,-</p>
+            <p>$4.99</p>
           </label>
           <label class="option">
-            <input type="checkbox" />
+            <input type="radio" name="delivery" value="9.99" />
             <span>Bring Express</span>
             <small>1–2 days</small>
-            <p>99,-</p>
+            <p>$9.99</p>
           </label>
           <label class="option">
-            <input type="checkbox" />
+            <input type="radio" name="delivery" value="0.00" />
             <span>Pick up in store</span>
             <small>1–4 days</small>
-            <p>0,-</p>
+            <p>$0.00</p>
           </label>
           <h2>Choose Payment</h2>
           <label class="payment">
-            <input type="checkbox" />
+            <input type="radio" name="payment" checked />
             <span>Vipps</span>
           </label>
           <label class="payment">
-            <input type="checkbox" />
+            <input type="radio" name="payment" />
             <span>Klarna</span>
           </label>
           <label class="payment">
-            <input type="checkbox" />
+            <input type="radio" name="payment" />
             <span>Visa</span>
           </label>
           <a href="confirmation.html" type="submit" class="cta cta-wide"
@@ -179,25 +180,26 @@
       </section>
       <aside class="summary">
         <h3>ORDER SUMMARY</h3>
-        <div class="product">
+        <div id="summary-items"></div>
+        <!-- <div class="product">
           <div>
             <p>Virex Outdoor</p>
             <p>Stormveil Pro</p>
             <p>Size: L</p>
           </div>
           <span>2 999,-</span>
-        </div>
+        </div> -->
         <div class="line">
           <span>Subtotal</span>
-          <p>2 999,-</p>
+          <p id="summary-subtotal"></p>
         </div>
         <div class="line">
           <span>Shipping</span>
-          <p>49,-</p>
+          <p id="summary-shipping"></p>
         </div>
         <div class="line total">
           <span>Total</span>
-          <p>3 048,-</p>
+          <p id="summary-total"></p>
         </div>
       </aside>
     </main>
