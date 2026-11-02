@@ -45,6 +45,10 @@ export function removeFromCart(id, size){
     saveCart(updatedCart);
 };
 
+export function clearCart(){
+    saveCart([]);
+};
+
 export function decreaseQuantity(id, size) {
     const cart = getCart();
     const found = cart.find((item) => item.id === id && item.size === size);

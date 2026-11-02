@@ -120,25 +120,67 @@
     <main class="checkout">
       <section class="form-section">
         <h1>SHIPPING AND PAYMENT</h1>
-        <form>
-          <label>Name</label>
-          <input type="text" placeholder="-" />
-          <label>Surname</label>
-          <input type="text" placeholder="-" />
-          <label>Email</label>
-          <input type="email" placeholder="-" />
-          <label>Phone number</label>
-          <input type="text" placeholder="-" />
-          <label>Address</label>
-          <input type="text" />
+        <form id="checkout-form" novalidate>
+          <label for="first-name">Name</label>
+          <input
+            id="first-name"
+            data-label="first name"
+            type="text"
+            placeholder="-"
+            required
+          />
+          <label for="last-name">Last Name </label>
+          <input
+            id="last-name"
+            data-label="last name"
+            type="text"
+            placeholder="-"
+            required
+          />
+          <label for="email">Email</label>
+          <input
+            id="email"
+            data-label="email"
+            type="email"
+            placeholder="-"
+            required
+          />
+          <label for="phone-number">Phone number</label>
+          <input
+            id="phone-number"
+            data-label="phone number"
+            type="tel"
+            placeholder="-"
+            required
+          />
+          <label for="address">Address</label>
+          <input
+            id="address"
+            data-label="address"
+            type="text"
+            placeholder="-"
+            required
+          />
           <div class="row">
             <div>
-              <label>Postcode</label>
-              <input type="text" placeholder="-" />
+              <label for="postcode">Postcode</label>
+              <input
+                id="postcode"
+                data-label="postcode"
+                type="text"
+                placeholder="-"
+                required
+              />
             </div>
             <div>
-              <label>City</label>
-              <input type="text" placeholder="-" />
+              <label for="city">City</label>
+              <input
+                id="city"
+                data-label="city"
+                type="text"
+                placeholder="-"
+                required
+              />
             </div>
           </div>
           <h2>Choose Delivery</h2>
@@ -173,9 +215,8 @@
             <input type="radio" name="payment" />
             <span>Visa</span>
           </label>
-          <a href="confirmation.html" type="submit" class="cta cta-wide"
-            >PLACE ORDER</a
-          >
+          <div id="form-errors" role="alert"></div>
+          <button type="submit" class="cta cta-wide">PLACE ORDER</button>
         </form>
       </section>
       <aside class="summary">

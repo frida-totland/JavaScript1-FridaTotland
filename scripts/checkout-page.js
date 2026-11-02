@@ -1,7 +1,7 @@
 'use strict';
 
 import { jackets } from "./api.js";
-import { getCart } from "./cart.js";
+import { getCart, clearCart } from "./cart.js";
 
 //Rendering the summary
 const summaryItems = document.getElementById('summary-items');
@@ -66,3 +66,41 @@ deliveryOptions.forEach((option) => {
 });
 
 renderSummary();
+
+const checkoutForm = document.getElementById('checkout-form');
+const formErrors = document.getElementById('form-errors');
+
+checkoutForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const errors = [];
+
+    if (getCart().length === 0){
+        errors.push('Your cart is empty');
+    }
+    const requiredInput = checkoutForm.querySelectorAll('input[required]');
+    requiredInput.forEach((input) => {
+        if(!input.value.trim()){
+            errors.push('Please enter ' + input.dataset.label);
+        }
+    });
+    const email = document.getElementById('email');
+    if (!email.value.trim()) {
+        errors.push('Please enter your email address');
+    } else if (!email.value.includes('@')) {
+        errors.push('Please enter a valid email address');
+    }
+
+    formErrors.innerHTML = '';
+
+    if (errors.length > 0){
+        errors.forEach((message) => {
+            const errorMessage = document.createElement('p');
+            errorMessage.textContent = message;
+            formErrors.appendChild(errorMessage);
+        });
+        return;
+    }
+
+    clearCart();
+    window.location.href = 'confirmation.html';
+});
