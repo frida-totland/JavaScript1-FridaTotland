@@ -360,7 +360,13 @@ footer a {
     display: none;
 }
 
-.footer-contact {
+.footer-links a:hover {
+    text-decoration: underline;
+    color: #ffaf4e;
+}
+
+.footer-contact,
+.footer-links {
     display: flex;
     flex-direction: column;
     gap: 10px;
