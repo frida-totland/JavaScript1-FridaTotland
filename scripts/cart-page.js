@@ -1,7 +1,8 @@
 'use strict';
 
-import { jackets } from "./api.js";
+import { getJackets } from "./api.js";
 import { getCart, removeFromCart, addToCart, decreaseQuantity } from "./cart.js";
+import { showLoading, showError } from "./ui.js";
 
 const cartItemsContainer = document.getElementById('cart-items');
 const cartTotal = document.getElementById('cart-total');
@@ -9,6 +10,8 @@ const summaryItems = document.getElementById('summary-items');
 const summarySubtotal = document.getElementById('summary-subtotal');
 const summaryTotal = document.getElementById('summary-total');
 const checkoutButton = document.getElementById('checkout-button');
+
+let jackets = [];
 
 function renderCart(){
     cartItemsContainer.innerHTML = '';
@@ -133,5 +136,17 @@ function renderCart(){
     cartTotal.textContent = '$' + total.toFixed(2);
 };
 
+async function init() {
+    const loading = showLoading(cartItemsContainer);
+    try {
+        jackets = await getJackets();
+        renderCart();
+    } catch (error) {
+        showError(cartItemsContainer, 'Could not load your cart. Please try again later.');
+        checkoutButton.hidden = true;
+    } finally {
+        loading.remove();
+    }
+};
 
-renderCart();
+init();

@@ -1,13 +1,19 @@
 'use strict';
 
-import { jackets } from "./api.js";
+import { getJackets } from "./api.js";
 import { getCart, clearCart } from "./cart.js";
+import { showLoading, showError } from "./ui.js";
 
 //Rendering the summary
 const summaryItems = document.getElementById('summary-items');
 const summarySubtotal = document.getElementById('summary-subtotal');
 const summaryShipping = document.getElementById('summary-shipping');
 const summaryTotal = document.getElementById('summary-total');
+const placeOrderButton = document.querySelector('#checkout-form button[type="submit"]');
+const checkoutForm = document.getElementById('checkout-form');
+const formErrors = document.getElementById('form-errors');
+
+let jackets = [];
 
 function renderSummary(){
     summaryItems.innerHTML = '';
@@ -60,15 +66,24 @@ function renderSummary(){
     summaryTotal.textContent = '$' + total.toFixed(2);
 };
 
-const deliveryOptions = document.querySelectorAll('input[name="delivery"]');
-deliveryOptions.forEach((option) => {
-    option.addEventListener('change', renderSummary);
-});
+async function init () {
+    const loading = showLoading(summaryItems);
+    try {
+        jackets = await getJackets();
+        renderSummary();
+        const deliveryOptions = document.querySelectorAll('input[name="delivery"]');
+        deliveryOptions.forEach((option) => {
+            option.addEventListener('change', renderSummary);
+        });
+    } catch (error) {
+        showError(summaryItems, 'Could not load your order summary. Please try again later.');
+        placeOrderButton.disabled = true;
+    } finally {
+        loading.remove();
+    }
+};
 
-renderSummary();
-
-const checkoutForm = document.getElementById('checkout-form');
-const formErrors = document.getElementById('form-errors');
+init();
 
 checkoutForm.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -84,9 +99,7 @@ checkoutForm.addEventListener('submit', (event) => {
         }
     });
     const email = document.getElementById('email');
-    if (!email.value.trim()) {
-        errors.push('Please enter your email address');
-    } else if (!email.value.includes('@')) {
+    if (!email.value.trim() && !email.value.includes('@')) {
         errors.push('Please enter a valid email address');
     }
 
