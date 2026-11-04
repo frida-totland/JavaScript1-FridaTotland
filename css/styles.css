@@ -215,6 +215,15 @@ header ul {
     padding: 5px 10px;
 }
 
+/* Loading and error message */
+.loading {
+    color: #0a3641;
+}
+
+.error-message {
+    color: red;
+}
+
 /* Header and Navigation on Home Page */
 .header-home {
     background-image: url(../images/RainyDays_Home1.jpg);

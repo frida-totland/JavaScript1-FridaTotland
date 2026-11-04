@@ -82,11 +82,13 @@
     box-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
-.product-size__cta:hover {
+.product-size__cta:hover,
+.product-size__cta.selected {
     background-color: #0a3641;
     color: #fff;
     transition: 0.5s;
 }
+
 
 .in-stock {
     margin-top: 20px;

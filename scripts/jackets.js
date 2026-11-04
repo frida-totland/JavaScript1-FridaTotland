@@ -1,44 +1,54 @@
 'use strict';
 
-import {jackets } from "./api.js";
+import { getJackets } from "./api.js";
+import { showLoading, showError } from "./ui.js";
 
-console.log(localStorage.getItem('storedInCart')); // Expected output: null
+const productGrid = document.querySelector('.product-page__products');
 
+// const womensJackets = jackets.filter((jacket) => {
+//     return jacket.tags.includes('womens');
+// });
 
-const mensJackets = jackets.filter((jacket) => {
-    return jacket.tags.includes('mens');
-});
+async function init() {
+    const loading = showLoading(productGrid);
 
-const womensJackets = jackets.filter((jacket) => {
-    return jacket.tags.includes('womens');
-});
+    try {
+        const jackets = await getJackets();
 
-mensJackets.forEach((jacket)=> {
-    const productGrid = document.querySelector('.product-page__products');
-    const productGridContainer = document.createElement('div');
-    productGrid.appendChild(productGridContainer);
-    productGridContainer.setAttribute('id', jacket.id);
+        const mensJackets = jackets.filter((jacket) => {
+            return jacket.tags.includes('mens');
+        });
 
-    const productLink = document.createElement('a');
-    productLink.href = `product.html?id=${jacket.id}`;
+        mensJackets.forEach((jacket)=> {
+            const productGridContainer = document.createElement('div');
+            productGrid.appendChild(productGridContainer);
+            productGridContainer.setAttribute('id', jacket.id);
 
-    const productImage = document.createElement('img');
-    productImage.setAttribute('src', jacket.image.url);
-    productImage.setAttribute('alt', jacket.image.alt);
-    productImage.classList.add('product-image');
+            const productLink = document.createElement('a');
+            productLink.href = `product.html?id=${jacket.id}`;
 
-    const productTitle = document.createElement('h3');
-    productTitle.textContent = jacket.title;
+            const productImage = document.createElement('img');
+            productImage.setAttribute('src', jacket.image.url);
+            productImage.setAttribute('alt', jacket.image.alt);
+            productImage.classList.add('product-image');
 
-    const productPrice = document.createElement('p');
-    productPrice.classList.add('product-price');
-    productPrice.textContent = '$' + jacket.price.toFixed(2);
+            const productTitle = document.createElement('h3');
+            productTitle.textContent = jacket.title;
 
-    productGridContainer.appendChild(productLink);
-    productLink.appendChild(productImage);
-    productGridContainer.appendChild(productTitle);
-    productGridContainer.appendChild(productPrice);
-});
+            const productPrice = document.createElement('p');
+            productPrice.classList.add('product-price');
+            productPrice.textContent = '$' + jacket.price.toFixed(2);
 
+            productGridContainer.appendChild(productLink);
+            productLink.appendChild(productImage);
+            productGridContainer.appendChild(productTitle);
+            productGridContainer.appendChild(productPrice);
+        });
+    } catch (error) {
+        showError(productGrid, 'Could not load products. Please try again later.');
+    } finally {
+        loading.remove();
+    }
+};
 
-console.log(jackets);
+init();
