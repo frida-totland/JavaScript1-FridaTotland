@@ -172,10 +172,6 @@ img{
     font-weight: bold;
 }
 
-header ul {
-    display: none;
-}
-
 .search-box {
     background: white;
     max-width: 300px;
@@ -275,11 +271,6 @@ header ul {
     gap: 20px;
 }
 
-.navbar-home ul {
-    display: flex;
-    gap: 30px;
-}
-
 .navbar-home-right {
     width: 100%;
     display: flex;
@@ -306,15 +297,6 @@ header ul {
     background-color: #eef4f6;
     text-align: center;
     padding: 50px 50px;
-}
-
-.left {
-    left: -20px;
-    opacity: 0.5;
-}
-
-.right {
-    right: -20px;
 }
 
 /*Products*/
