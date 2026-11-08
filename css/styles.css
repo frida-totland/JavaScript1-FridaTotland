@@ -50,6 +50,11 @@ ul {
     padding: 0;
 }
 
+button {
+    border: none;
+    background-color: transparent;
+}
+
 .cta {
     background-color: #ffaf4e;
     color: #0a3641;

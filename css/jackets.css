@@ -85,6 +85,10 @@
     margin: 0;
 }
 
+.product-card .on-sale {
+    font-size: 1.5em;
+}
+
 .slider {
   -webkit-appearance: none;
   appearance: none;

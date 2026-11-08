@@ -61,6 +61,7 @@
 .product-size {
     display: flex;
     gap: 15px;
+    margin: 30px 0;
 }
 
 .product-size__cta {
