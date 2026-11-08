@@ -115,8 +115,15 @@
         gap: 30px 15px;
     }
 
+    .product-page {
+        flex-direction: row;
+    }
+
     .product-page__filter {
         display: block;
+        padding: 0;
+        border-bottom: none;
+        border-right: #0a3641 solid 1px;
     }
 
     /* Product specific page */
