@@ -274,43 +274,11 @@ header ul {
     width: 300px;
 }
 
-/* Carousel Styling */
-.carousel {
+/* Product grid Styling */
+.product-grid {
     background-color: #eef4f6;
     text-align: center;
     padding: 50px 50px;
-}
-
-.carousel-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-.carousel-content {
-    display: flex;
-    gap: 20px;
-    overflow: hidden;
-}
-
-.carousel__images {
-    width: calc((100% - 20px) / 2);
-    border-radius: 10px;
-    object-fit: cover;
-    margin-bottom: 5px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1)
-}
-
-.carousel-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    border: none;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    font-size: 40px;
-    cursor: pointer;
 }
 
 .left {

@@ -10,6 +10,10 @@
     border-radius: 10px;
 }
 
+.product-grid .product-card {
+    align-items: center;    
+}
+
 .inspiration {
     background-color: #eef4f6;
     text-align: center;

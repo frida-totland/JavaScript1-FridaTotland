@@ -1,8 +1,4 @@
 @media(min-width: 600px) {
-    .carousel__images {
-        width: calc((100% - 60px) / 4);
-    }
-
     .inspiration-grid {
         grid-template-columns: 1fr 1fr;
         align-items: center;
@@ -31,7 +27,7 @@
     }
 
     /*Footer*/
-        footer {
+    footer {
         flex-direction: row;
         justify-content: space-around;
         align-items: flex-start;
