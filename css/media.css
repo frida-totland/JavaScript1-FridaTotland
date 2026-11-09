@@ -1,4 +1,25 @@
 @media(min-width: 600px) {
+    .cart-header,
+    .cart-item {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        gap: 20px;
+    }
+
+    .cart-item img {
+        grid-row: auto;
+        width: 150px;
+        height: 150px;
+    }
+
+    .item-info {
+        grid-column: auto;
+    }
+
+    .cart-item > .cart-price:first-of-type {
+        display: block;
+    }
+
     .inspiration-grid {
         grid-template-columns: 1fr 1fr;
         align-items: center;

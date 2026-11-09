@@ -99,7 +99,7 @@ checkoutForm.addEventListener('submit', (event) => {
         }
     });
     const email = document.getElementById('email');
-    if (!email.value.trim() && !email.value.includes('@')) {
+    if (email.value.trim() && !email.value.includes('@')) {
         errors.push('Please enter a valid email address');
     }
 

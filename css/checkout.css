@@ -6,7 +6,8 @@
 }
 
 .form-section {
-  width: 330px;
+  width: 100%;
+  max-width: 330px;
   margin: auto;
 }
 
@@ -68,7 +69,8 @@ input[type="tel"] {
 }
 
 .summary {
-  width: 320px;
+  width: 100%;
+  max-width: 320px;
   background: #eef4f6;
   padding: 35px 25px;
   margin: 60px auto;
